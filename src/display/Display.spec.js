@@ -26,19 +26,19 @@ test("it should display closed when it is closed", () => {
 	expect(closedStatus).toBeTruthy();
 });
 
-test("it should display open when open", () => {
+test("it should display open when it is open", () => {
 	const { getByText } = render(<Display locked={false} closed={false} />);
 	const closedStatus = getByText(/open/i);
 	expect(closedStatus).toBeTruthy();
 });
 
-test("uses red-led class when locked or closed", () => {
+test("it has red-led class when gate is locked or closed", () => {
 	const { getByText } = render(<Display locked={true} closed={true} />);
 	expect(getByText(/closed/i)).toHaveClass("red-led");
 	expect(getByText(/locked/i)).toHaveClass("red-led");
 });
 
-test("uses green-led class when unlocked or open", () => {
+test("it has red-led class when gate is unlocked or open", () => {
 	const { getByText } = render(<Display locked={false} closed={false} />);
 	expect(getByText(/open/i)).toHaveClass("green-led");
 	expect(getByText(/unlocked/i)).toHaveClass("green-led");
