@@ -52,7 +52,7 @@ test("it should call toggleLocked as props to lock the gate when closed and unlo
 	mock.mockClear();
 });
 
-test("it should call toggleClosed as props to close the gate when open and unclocked", () => {
+test("it should call toggleClosed as props to close the gate when open and unlocked", () => {
 	const { getByText } = render(
 		<Controls
 			locked={false}
